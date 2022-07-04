@@ -12,13 +12,7 @@ const clusterMode = argumentos.cluster;
 //Obtengo el numero de nucleos disponibles en mi PC
 const numCPUs = os.cpus().length;
 
-/* --------------------------------------------------------------------------- */
-/* MASTER */
-/**
- * isMaster vs isPrimary
- * https://stackoverflow.com/questions/68978929/why-is-nodejs-cluster-module-not-working
- */
-if (clusterMode && cluster.isMaster) {
+if (clusterMode && cluster.isPrimary) {
   console.log('Ejecutando modo cluster');
   console.log(`PID MASTER ${process.pid}`);
 
@@ -31,8 +25,6 @@ if (clusterMode && cluster.isMaster) {
     cluster.fork();
   });
 } else {
-  /* --------------------------------------------------------------------------- */
-  /* WORKERS */
   Server.listen(PORT, () =>
     console.log(
       `Servidor express escuchando en el puerto ${PORT} - PID WORKER ${process.pid}`
