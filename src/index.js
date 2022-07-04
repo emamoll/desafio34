@@ -11,7 +11,7 @@ const init = () => {
     logger.info(`Escuchando en puerto ${PORT} - PID Worker ${process.pid}`)
   );
 
-  server.on("error", (err) => logger.error(`Error en el servidor: ${err}`));
+  Server.on("error", (err) => logger.error(`Error en el servidor: ${err}`));
 };
 
 init();
