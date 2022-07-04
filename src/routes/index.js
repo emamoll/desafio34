@@ -14,7 +14,7 @@ const passportOptions = {
 };
 
 router.get("/", async (req, res) => {
-  res.render("login");
+  res.json({msg: 'Hola'});
 });
 
 router.post(

@@ -11,7 +11,7 @@ var _winston = _interopRequireDefault(require("winston"));
 
 var createLogger = _winston["default"].createLogger,
     format = _winston["default"].format,
-    trasnports = _winston["default"].trasnports;
+    transports = _winston["default"].transports;
 var combine = format.combine,
     printf = format.printf,
     timestamp = format.timestamp,
@@ -23,11 +23,11 @@ var logConfiguration = {
   }), colorize(), printf(function (info) {
     return "".concat(info.level, " | ").concat([info.timestamp], " | ").concat(info.message);
   })),
-  trasnports: [new _winston["default"].transports.Console(), new _winston["default"].transports.File({
+  transports: [new _winston["default"].transports.Console(), new _winston["default"].transports.File({
     filename: "./logs/warn.log",
     level: "warn"
   }), new _winston["default"].transports.File({
-    filename: "logs/error.log",
+    filename: "./logs/error.log",
     level: "error"
   })]
 };

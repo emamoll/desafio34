@@ -25,8 +25,6 @@ var _child_process = require("child_process");
 
 var _path = _interopRequireDefault(require("path"));
 
-var _compression = _interopRequireDefault(require("compression"));
-
 var _index = require("../console/index");
 
 var router = (0, _express.Router)();
@@ -102,11 +100,6 @@ router.get("/hello", function (req, res) {
   });
 });
 router.get("/info", function (req, res) {
-  res.json({
-    objectProcess: _arguments.objectProcess
-  });
-});
-router.get("/compr", (0, _compression["default"])(), function (req, res) {
   res.json({
     objectProcess: _arguments.objectProcess
   });
