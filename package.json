@@ -9,6 +9,9 @@
     "start": "npm run build && node ./dist/index.js",
     "dev": "nodemon --exec babel-node ./src/index.js"
   },
+  "engines": {
+    "node": ">=0.12"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emamoll/desafio34.git"
