@@ -1,4 +1,3 @@
-import Config from "./config";
 import { connectDb } from "./services/db";
 import Server from "./services/server";
 import { args } from "./arguments";
