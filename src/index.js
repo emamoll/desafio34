@@ -1,8 +1,6 @@
 import { connectDb } from "./services/db";
 import Server from "./services/server";
-import { args } from "./arguments";
 import { logger } from "./console";
-import cluster from "cluster";
 
 const PORT = process.env.PORT || 8080;
 
